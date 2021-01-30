@@ -1,0 +1,37 @@
+{
+  "name": "vue-test-task-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack serve --hot",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vovasap/vue-test-task-2.git"
+  },
+  "author": "Vladimir Sapozhnikov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vovasap/vue-test-task-2/issues"
+  },
+  "homepage": "https://github.com/vovasap/vue-test-task-2#readme",
+  "dependencies": {
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.1",
+    "mini-svg-data-uri": "^1.2.3",
+    "sass": "^1.32.5",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.19.0",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

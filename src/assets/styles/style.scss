@@ -1,0 +1,14 @@
+@import './src/assets/styles/fonts';
+@import './src/assets/styles/variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: $font-regular;
+  color: $text-color;
+  font-size: 16px;
+  line-height: 1.3;
+  background-color: $bg-color;
+}
