@@ -1,22 +1,23 @@
 <template>
   <label class="aw-checkbox">
     <input class="aw-checkbox__input" type="checkbox" @click="onClick">
-    <slot></slot>
-    <span class="aw-checkbox__mark checked"></span>
+    <p class="aw-checkbox__label">
+      <slot/>
+    </p>
+    <span class="aw-checkbox__mark"></span>
   </label>
 </template>
 
 <script>
 export default {
-  props: {
-    value: {
-      type: String,
-      default: ''
+  data() {
+    return {
+      value: false
     }
   },
   methods: {
     onClick() {
-      //
+      // TODO
     }
   }
 }
@@ -28,13 +29,15 @@ export default {
 .aw-checkbox {
   position: relative;
   padding-left: 35px;
+  font-family: $font-medium;
   cursor: pointer;
   user-select: none;
-  & input {
+  &__input {
     display: none;
   }
-  &__input {
-
+  &__label{
+    margin: 0;
+    line-height: 28px;
   }
   &__mark {
     position: absolute;

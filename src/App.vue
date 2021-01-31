@@ -5,8 +5,9 @@
     <form class="registration-form__form">
       <aw-input label="Label" placeholder="Placeholder"/>
       <aw-button>Button</aw-button>
-      <aw-checkbox>checkbox</aw-checkbox>
-      <aw-select label="Label" :options="[1,2,3,4]">Dropdown</aw-select>
+      <aw-checkbox v-model="isAgreeToTerms">Принимаю <a class="link" href="#">условия</a> использования</aw-checkbox>
+      <br><br><br>
+      <aw-select v-model="registrationData.lang" label="Язык" options-name="Язык" :options="languages"/>
 
 
 
@@ -23,21 +24,35 @@ import AwSelect from "./components/AwSelect.vue";
 export default {
   components: {
     AwInput, AwButton, AwCheckbox, AwSelect
+  },
+  data() {
+    return {
+      languages: ['Русский','Английский','Китайский','Испанский'],
+      registrationData: {
+        lang: '',
+      },
+      isAgreeToTerms: false
+    }
   }
 }
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/styles/variables";
 
 .registration-form {
-  width: 460px;
+  max-width: 460px;
   margin: 0 auto;
 
   border-radius: 24px;
 
-&__form {
+  &__form {
    display: flex;
    flex-direction: column;
- }
+  }
+}
+.link {
+  color: $accent;
+  text-decoration: none;
 }
 </style>

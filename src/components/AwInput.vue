@@ -46,6 +46,9 @@ export default {
     &::placeholder {
       color: $text-color-light;
     }
+    &:focus {
+      border: 2px solid $accent;
+    }
   }
 }
 </style>

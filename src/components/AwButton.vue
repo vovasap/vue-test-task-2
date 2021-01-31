@@ -20,6 +20,7 @@ export default {
 
 .aw-button {
   height: 56px;
+  padding: 0 65px;
   border: none;
   border-radius: 6px;
   font-family: $font-medium;
