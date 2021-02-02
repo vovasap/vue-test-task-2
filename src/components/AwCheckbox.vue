@@ -1,23 +1,35 @@
 <template>
   <label class="aw-checkbox">
-    <input class="aw-checkbox__input" type="checkbox" @click="onClick">
-    <p class="aw-checkbox__label">
+    <input class="aw-checkbox__input" type="checkbox" :value="value" @input="toggle" :checked="checked">
+    <span class="aw-checkbox__label">
       <slot/>
-    </p>
+    </span>
     <span class="aw-checkbox__mark"></span>
   </label>
 </template>
 
 <script>
 export default {
+  props: {
+    checked: {
+      type: Boolean,
+      default: false
+    },
+  },
+  created() {
+    if (this.checked) {
+      this.$emit('input', true)
+    }
+  },
   data() {
     return {
-      value: false
+      value: this.checked
     }
   },
   methods: {
-    onClick() {
-      // TODO
+    toggle() {
+      this.value = !this.value
+      this.$emit('input', this.value)
     }
   }
 }
@@ -28,6 +40,7 @@ export default {
 
 .aw-checkbox {
   position: relative;
+  margin-bottom: 34px;
   padding-left: 35px;
   font-family: $font-medium;
   cursor: pointer;
